@@ -48,7 +48,6 @@ public class Game2 {
         final String input;
         final Hand original;
         final int amount;
-
         final Hand replaced;
 
         public Bet(String _input) {
@@ -69,17 +68,11 @@ public class Game2 {
 
         @Override
         public int compareTo(Bet o) {
-            // return this.original.compareTo(o.original);
             int dif = 0;
 
             if (dif == 0) {
                 dif = Integer.compare(this.replaced.combination.value, o.replaced.combination.value);
             }
-
-            // if (dif == 0) {
-            // dif = Integer.compare(this.original.combination.value,
-            // o.original.combination.value);
-            // }
 
             if (dif == 0) {
                 dif = this.original.compareTo(o.original);
@@ -87,7 +80,6 @@ public class Game2 {
 
             return dif;
         }
-
     }
 
     class CardFrequency {
@@ -140,7 +132,6 @@ public class Game2 {
                             .comparingInt(a -> -((Entry<Cards, Integer>) (a)).getValue())
                             .thenComparingInt(a -> -((Entry<Cards, Integer>) (a)).getKey().value))
                     .toList();
-
         }
     }
 
@@ -209,7 +200,6 @@ public class Game2 {
                 else
                     return Combinations.Pair;
             return Combinations.HighCard;
-
         }
 
         @Override
@@ -283,7 +273,6 @@ public class Game2 {
         lines.map(Bet::new)
                 .sorted()
                 .forEachOrdered(bets::add);
-
     }
 
     public int calculate() {
@@ -293,9 +282,7 @@ public class Game2 {
             sum += (i + 1) * list.get(i).amount;
 
         }
-
         return sum;
-
     }
 
     public static void main(String[] args) {
@@ -310,7 +297,5 @@ public class Game2 {
         } catch (Exception e) {
             e.printStackTrace();
         }
-
     }
-
 }
