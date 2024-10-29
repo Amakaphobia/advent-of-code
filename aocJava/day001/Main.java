@@ -35,7 +35,7 @@ public class Main {
     public static void main(String[] args) {
 
         try (BufferedReader reader = new BufferedReader(
-                new FileReader(new File("./../../resources/001.txt")))) {
+                new FileReader(new File("resources/001.txt")))) {
 
             int sum = reader.lines()
                     // .peek(System.out::println)
